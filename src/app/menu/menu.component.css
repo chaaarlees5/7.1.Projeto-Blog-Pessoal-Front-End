@@ -1,0 +1,12 @@
+.img-navbar {
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.font-size16 {
+    font-size: 16px;
+}
+
+a {
+    cursor: pointer;
+}
