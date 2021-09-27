@@ -1,0 +1,22 @@
+ul.social-network {
+    list-style: none;
+    display: flex;
+}
+
+.fa {
+    font-size: 25pt;
+    color: white;
+    padding: 5px 15px;
+}
+
+.fa-facebook-square:hover {
+    color:#3b5998;
+}
+
+.fa-linkedin-square:hover {
+    color:#0e76a8;
+}
+
+.fa-github-square:hover {
+    color: black;
+}
