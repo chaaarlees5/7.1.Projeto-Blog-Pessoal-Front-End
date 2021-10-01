@@ -8,32 +8,34 @@
                     <h1 class="text-center">Register</h1>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input class="form-control" type="text" name="name" id="name" placeholder="Your name">
+                        <input [(ngModel)]='user.nome' class="form-control" type="text" name="name" id="name" placeholder="Your name">
                     </div>
 
                     <div class="form-group">
                         <label for="user">Username</label>
-                        <input class="form-control" type="text" name="user" id="user" placeholder="Your username">
+                        <input [(ngModel)]='user.email' class="form-control" type="text" name="user" id="user" placeholder="Your username">
                     </div>
 
                     <div class="form-group">
                         <label for="photo">Photo link</label>
-                        <input class="form-control" type="text" name="photo" id="photo" placeholder="Your photo">
+                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="photo" id="photo" placeholder="Your photo">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" name="password" id="password" placeholder="Your password">
+                        <input (input)='confirmPassword($event)' class="form-control" type="password" name="password" id="password"
+                            placeholder="Your password">
                     </div>
 
                     <div class="form-group">
                         <label for="Confirm">Confirm your password</label>
-                        <input class="form-control" type="password" name="confirm" id="confirm" placeholder="Confirm your password">
+                        <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirm" id="confirm"
+                            placeholder="Confirm your password">
                     </div>
 
                     <div class="form-group">
                         <label for="type">User type</label>
-                        <select class="form-control" name="type" id="type">
+                        <select class="form-control" name="type" id="type" (change)='userType($event)'>
                             <option>Select user type</option>
                             <option value="regular">Regular</option>
                             <option value="admin">Administrator</option>
@@ -42,7 +44,7 @@
 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-danger mr-4" routerLink='/login'>Cancel</button>
-                        <button type="submit" class="btn btn-success" routerLink='/login'>Register</button>
+                        <button type="submit" class="btn btn-success" (click)='register()'>Register</button>
                     </div>
 
                     <hr class="mt-5 mb-3">
