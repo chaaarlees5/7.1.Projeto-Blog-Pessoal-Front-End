@@ -7,11 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
             <li class="nav-item active">
-                <img src="../../assets/img/charlin.jpg" alt="User image" class="img-fluid rounded-circle img-navbar">
+                <img src="{{photo}}" alt="User image" class="img-fluid rounded-circle img-navbar">
             </li>
 
             <li class="nav-item pl-3">
-                <p class="m-0 font-weight-bold text-white font-size16">Username</p>
+                <p class="m-0 font-weight-bold text-white font-size16">{{name}}</p>
             </li>
 
             <li class="nav-item pl-3">
@@ -25,7 +25,7 @@
 
         <ul class="navbar-nav ml-auto d-flex align-items-center">
             <li class="nav-item pl-3">
-                <a class="m-0 font-weight-bold text-white">
+                <a (click)='exit()' class="m-0 font-weight-bold text-white">
                     Exit <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             </li>
