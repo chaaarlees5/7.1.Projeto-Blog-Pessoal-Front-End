@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Theme } from '../model/Theme';
+import { ThemeService } from '../service/theme.service';
 
 @Component({
   selector: 'app-theme',
@@ -9,8 +11,13 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ThemeComponent implements OnInit {
 
+  theme: Theme = new Theme()
+  themesList: Theme[]
+
   constructor(
-    private router: Router
+    private router: Router,
+    private serviceTheme: ThemeService 
+
   ) { }
 
   ngOnInit() {
@@ -19,6 +26,15 @@ export class ThemeComponent implements OnInit {
       
       this.router.navigate(['/login'])
     }
+  }
+
+  register() {
+    this.serviceTheme.post(this.theme).subscribe((resp: Theme) => {
+      this.theme = resp
+      alert('Theme successfully registered')
+
+      this.theme = new Theme()
+    })
   }
 
 }
