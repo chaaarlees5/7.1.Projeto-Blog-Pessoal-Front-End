@@ -23,16 +23,23 @@ export class ThemeComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '') {
       alert('Session expired. Please, login again.')
-      
       this.router.navigate(['/login'])
     }
+
+    this.findAll()
+  }
+
+  findAll() {
+    this.serviceTheme.getAll().subscribe((resp: Theme[]) => {
+      this.themesList = resp
+    })
   }
 
   register() {
     this.serviceTheme.post(this.theme).subscribe((resp: Theme) => {
       this.theme = resp
       alert('Theme successfully registered')
-
+      this.findAll()
       this.theme = new Theme()
     })
   }
