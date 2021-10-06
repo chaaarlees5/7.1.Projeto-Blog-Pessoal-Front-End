@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '') {
       alert('Session expired. Please, login again.')
-      
       this.router.navigate(['/login'])
     }
   }

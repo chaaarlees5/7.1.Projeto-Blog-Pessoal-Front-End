@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ThemeComponent } from './theme/theme.component';
+import { EditThemeComponent } from './edit/edit-theme/edit-theme.component';
+import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ThemeComponent } from './theme/theme.component';
     RegisterComponent,
     HomeComponent,
     ThemeComponent,
+    EditThemeComponent,
+    DeleteThemeComponent,
   ],
   imports: [
     BrowserModule,
